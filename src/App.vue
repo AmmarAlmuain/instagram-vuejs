@@ -36,12 +36,12 @@
       <i class="fa-regular fa-heart p-2 max-md:text-4xl text-2xl"></i>
       <div class="pfp-fixed-dropdown relative -center-col">
         <img src="https://i.pinimg.com/originals/dc/04/5f/dc045f68cbb786ec97c1f7281dc83643.jpg" alt="pfp-in-icons" class="ml-4 w-6 h-6 max-md:w-9 max-md:h-9 rounded-full" @click="profile_show">
-        <div class="drop-down-pfp absolute top-0 mt-9 ml-4 bg-white h-20 rounded w-32 border border-[219, 219, 219] overflow-hidden" v-if="profile_show_var">
+        <div class="drop-down-pfp absolute top-0 z-10 mt-9 ml-4 bg-white h-20 rounded w-32 border border-[219, 219, 219] overflow-hidden" v-if="profile_show_var">
           <div class="profile-pfp h-10 w-full flex hover:bg-slate-50 justify-start items-center pl-2">
             <p class="font-sans font-light text-sm"> Profile </p>
           </div>
           <div class="log-out-pfp h-10 w-full border-t hover:bg-slate-50 border-[219, 219, 219] flex justify-start items-center pl-2">
-            <p class="font-sans font-light text-sm"> Log out </p>
+            <router-link to="login"> <p class="font-sans font-light text-sm"> Log out </p> </router-link>
           </div>
         </div>
       </div>

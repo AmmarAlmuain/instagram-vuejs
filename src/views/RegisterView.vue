@@ -67,7 +67,7 @@
         </div>
 
         <div class="new-account h-16 w-full -center-col border border-gray-300 mt-3 text-sm">
-            <p> Have an account? <span style="color: #0095f6"> Log in </span> </p>
+            <p> Have an account? <router-link to="/login"> <span style="color: #0095f6"> Log in </span> </router-link> </p>
         </div>
 
         <div class="get-app h-[6.25rem] w-full flex justify-evenly items-center flex-col">

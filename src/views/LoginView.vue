@@ -49,7 +49,7 @@
         </div>
         
         <div class="new-account h-16 w-full -center-col border border-gray-300 mt-3 text-sm">
-            <p> Don't have an account? <span style="color: #0095f6"> Sign up </span> </p>
+            <p> Don't have an account? <router-link to="/register"> <span style="color: #0095f6"> Sign up </span> </router-link> </p>
         </div>
         
         <div class="get-app h-[6.25rem] w-full flex justify-evenly items-center flex-col">
