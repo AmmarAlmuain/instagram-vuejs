@@ -24,7 +24,7 @@
             <p class="font-sans font-semlightibold text-sm"> Embed </p>
         </div>
         <div class="single-choice h-12 w-full -center border-t border-[219, 219, 219]" @click="close_threedots">
-            <p class="font-sans font-semlightibold text-sm"> Cancel </p>
+            <p class="font-sans font-semlightibold text-sm cursor-pointer"> Cancel </p>
         </div>
         </div>
     </div>
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div class="more-options w-10 h-10 flex justify-center items-center" @click="toggleThreeDots">
-                        <i class="fa-solid fa-ellipsis"></i>
+                        <i class="fa-solid fa-ellipsis cursor-pointer"></i>
                     </div>
                 </div>
                 <div class="reel-img">
@@ -109,7 +109,7 @@
                         </div>
                     </div>
                     <div class="more-options w-10 h-10 flex justify-center items-center">
-                        <i class="fa-solid fa-ellipsis"></i>
+                        <i class="fa-solid fa-ellipsis cursor-pointer"></i>
                     </div>
                 </div>
                 <div class="reel-img">
@@ -172,10 +172,12 @@ export default {
 
     toggleThreeDots() {
       this.toggle_w_threedots = !this.toggle_w_threedots
+      window.onscroll = () => window.scroll(0, 0);
     },
 
     close_threedots() {
         this.toggle_w_threedots = false
+        window.onscroll = null
     },
 
     documentClick(e){
@@ -183,6 +185,7 @@ export default {
       let target = e.target
       if ( el == target) {
         this.toggle_w_threedots=false
+        window.onscroll = null
       }
     }
   },

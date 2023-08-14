@@ -1,12 +1,12 @@
 <template>
 
-  <div class="full-w-switch" v-if="toggleSwitch" ref="w_switch">
+  <div class="full-w-switch h-full" v-if="toggleSwitch" ref="w_switch">
     <div class="middle-screen-fixed-switch h-64 w-96 rounded-xl -center-col overflow-hidden bg-white">
         <div class="title-and-close w-96 h-10 flex justify-end items-center text-base font-semibold font-sans border-b border-gray-300">
           <div class="content-inside w-80 -center">
             <p> Switch accounts </p>
           </div>
-          <div class="cross-fixed -center h-10 w-10" @click="close_switch">
+          <div class="cross-fixed -center h-10 w-10 cursor-pointer" @click="close_switch">
             <p class="text-2xl"> <i class="fa-solid fa-xmark"></i> </p>
           </div>
         </div>
@@ -56,7 +56,7 @@
             <p style="color : #8e8e8e"> DeathGuns#525</p>
         </div>
         <div class="personal-account-switch h-14 w-14 flex justify-center items-center text-xs">
-            <p style="color : #0095f6" class="font-sans font-medium" @click="toggle_w_switch"> Switch </p>
+            <p style="color : #0095f6" class="font-sans font-medium cursor-pointer" @click="toggle_w_switch"> Switch </p>
         </div>
     </div>
     <div class="sugg-all flex justify-between items-center mt-3.5">
@@ -79,7 +79,7 @@
             </div>
         </div>
         <div class="random-ppl-follow h-10 w-10 flex justify-center items-center mr-1.5">
-            <p class="font-sans text-xs font-medium" id="tsu" style="color : #0095f6" @click=toggleSliderUnfollow> Follow </p>
+            <p class="font-sans text-xs font-medium cursor-pointer" id="tsu" style="color : #0095f6" @click=toggleSliderUnfollow> Follow </p>
         </div>
     </div>
 
@@ -166,6 +166,7 @@ export default {
 
     toggle_w_switch() {
         this.toggleSwitch = !this.toggleSwitch
+        window.onscroll = () => window.scroll(0, 0);
     },
 
     toggleSliderUnfollow() {
@@ -176,21 +177,25 @@ export default {
       }
       if (TSUchecker == " Following ") {
         this.toggle_w_unfollow = !this.toggle_w_unfollow
+        window.onscroll = () => window.scroll(0, 0);
       }
     },
 
     close_switch() {
         this.toggleSwitch = false
+        window.onscroll = null;
     },
 
     unfollow_pos_abs() {
         document.getElementById("tsu").innerHTML = " Follow "
         document.getElementById("tsu").style.color = "#0095f6"
         this.toggle_w_unfollow = !this.toggle_w_unfollow
+        window.onscroll = null;
     },
 
     close_unfollow() {
         this.toggle_w_unfollow = false
+        window.onscroll = null;
     },
 
     documentClick(e){
@@ -202,6 +207,7 @@ export default {
       }
       if ( el2 == target) {
         this.toggleSwitch=false
+        window.onscroll = null;
       }
     }
   },
